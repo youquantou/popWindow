@@ -1,0 +1,35 @@
+                HousePostPopupWindow mWindow = new HousePostPopupWindow(this);
+//根据指定View定位
+//                PopupWindowCompat.showAsDropDown(mWindow, findViewById(v.getId()), 0, 0, Gravity.START);
+//或者
+                mWindow.showAsDropDown(findViewById(v.getId()));
+
+//又或者使用showAtLocation根据屏幕来定位
+//                mWindow.showAtLocation(...);
+
+//                tag = HeZu;
+//                showDialogChoose();
+//                home_insert_group.setVisibility(View.VISIBLE);
+//                home_input_re.setVisibility(View.GONE);
+//                home_insert_group_direction.setVisibility(View.GONE);
+//                home_insert_elevator_group.setVisibility(View.GONE);
+
+
+
+
+
+
+
+public class HousePostPopupWindow extends PopupWindow {
+    public HousePostPopupWindow(Context context) {
+        super(context);
+        setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        setOutsideTouchable(true);
+        setFocusable(true);
+        setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        View contentView = LayoutInflater.from(context).inflate(R.layout.spinner_house_post,
+                null, false);
+        setContentView(contentView);
+    }
+}
